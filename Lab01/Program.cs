@@ -1,9 +1,4 @@
-﻿using System.ComponentModel.Design;
-
-
-
-
-using System;
+﻿using System;
 
 class Program
 {
@@ -94,6 +89,32 @@ class Program
 
                     Console.WriteLine();
                     Console.WriteLine("--- Operacion exitosa ---");
+
+                    // se calcula la cantidad de billetes a entregar segun el monto retirado
+                    int monto = plata_retiro;
+
+                    int monto1 = monto / 200;
+                    monto %= 200;
+
+                    int monto2 = monto / 100;
+                    monto %= 100;
+
+                    int monto3 = monto / 50;
+                    monto %= 50;
+
+                    int monto4 = monto / 20;
+                    monto %= 20;
+
+                    int monto5 = monto / 10;
+
+                    Console.WriteLine("Se entregan:");
+                    if (monto1 > 0) Console.WriteLine("Billetes de 200: " + monto1);
+                    if (monto2 > 0) Console.WriteLine("Billetes de 100: " + monto2);
+                    if (monto3 > 0) Console.WriteLine("Billetes de 50: " + monto3);
+                    if (monto4 > 0) Console.WriteLine("Billetes de 20: " + monto4);
+                    if (monto5 > 0) Console.WriteLine("Billetes de 10: " + monto5);
+
+                    Console.WriteLine();
                     Console.WriteLine("Saldo restante: S/." + saldo);
                     Console.WriteLine();
                     valido = true; // salir del bucle interno
